@@ -128,15 +128,12 @@ header .content-2 nav a {
 }
 .pokemons .model{
     background-color: #e4e4e4;
-    transition: all ease 0.3s;
     text-align: center;
     padding: 10px;
-    border: solid 1px #DDD;
-    transition: all ease 0.3s;
+    transition: background ease 0.3s;
 }
 .pokemons .model:hover{
-    background-color: #EEE;
-
+    background-color: #ffffff;
 }
 .model p{
     padding: 10px;
