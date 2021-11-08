@@ -5,16 +5,19 @@
     overflow-x: hidden;
 }
 body{
+    background: #ffca4b;
     display: grid;
     margin: 0 auto;
     grid-template-areas: "header header header" ". main ." "footer footer footer";
     grid-template-columns: auto 1200px auto;
     grid-template-rows: auto auto auto;
 }
-.redes-sociais ul{
+ul{
     display: flex;
     list-style: none;
     justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 .o-header{
     display: flex;
@@ -29,9 +32,9 @@ body{
     margin: auto;
 }
 .o-footer{
-    color:#ffffff;
     grid-area: footer;
     background: #000;
+    padding-top: 30px;
 }
 .o-header{
     background: #1a5dac;
@@ -49,31 +52,50 @@ body{
 .content-1 img{
     width: 70%;
 }
-.redes-sociais li{
-    text-align: right;
-}
-.redes-sociais ul li img{
-    width: 45%;
-}
-.content-2{
-    bottom: 0;
+.social-links {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 20%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.social-links a {
+    font-size: 25px;
+    color: #ffca4b;
+    transition: all ease-in 0.2s;
+}
+.social-links a:hover {
+    color: #ffffff;
+}
+.social-links li {
+    margin-left: 20px;
+}
+.content-2 {
     width: 100%;
-    height: auto;
+    padding: 15px 0;
     background: #000;
 }
-.navegacao ul{
+.conteudo {
+    width: 1200px;
     display: flex;
-    list-style: none;
-    justify-content: flex-start;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
 }
-.navegacao ul li a{
-    font-size: 20px;
+header .content-2 nav ul li {
+    border-right: solid 1px  #ffca4b;;
+}
+
+header .content-2 nav ul li:last-child {
+    border-right: none;
+}
+
+header .content-2 nav a {
     color: #ffca4b;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    transition: all ease 0.2s;
 }
 .busca input{
     background-image: url("../img/lupinha.png");
@@ -84,13 +106,16 @@ body{
     border: 3px solid #ffca4b;
 }
 .pokemons .model{
-    background-color:#e4e4e4 ;
+    background-color: #e4e4e4;
+    transition: all ease 0.3s;
     text-align: center;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    height: 260px;
-    width: 140px;
-    border: 2px solid #000;
+    padding: 10px;
+    border: solid 1px #DDD;
+    transition: all ease 0.3s;
+}
+.pokemons .model:hover{
+    background-color: #EEE;
+
 }
 .model p{
     padding: 10px;
@@ -108,104 +133,155 @@ body{
     background: #1a5dac;
     box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
 }
-section.principal{
+section.principal {
     display: flex;
     justify-content: space-around;
+    padding: 30px 0;
 }
 .pokemons img{
-    height: 120px;
-    width: 120px;
+    max-width: 100%;
     border: 1px solid #000;
 }
 .pokemons{
-    display: grid;
-    grid-template-columns: repeat(5,20%);
-    grid-template-rows: auto auto;
-    place-items: center;
-    padding: 1.5rem;
-    width: 70%;
+        width: 75%;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .container{
-    background: #1a5dac;
-    display: flex;
-    flex-direction:column;
-    justify-content: space-evenly;
-    width: 30%;
-    align-items: center;
+    padding-left: 30px;
+    width: 25%;
 }
-.pok3 img{
-    height: 110px;
-    width: 110px;
+.top3dasemana{
+    width: 90%;
 }
-img.numero{
-    height: auto;
-    width: 10%;
+.top3{
+    background: #FFF;
 }
-.pok3{
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #000;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-hr{
-    width: 80%;
-    margin: auto;
-}
-img.top{
-    width: 80%;
-}
-.promocao{
-    background: #000657;
-    width: 80%;
-    border: 1px solid #ffca4b;
+.top3 li {
+    counter-increment: li;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-img.promocao{
-    width: 10%;
-}
-img.mewtwo{
-    height: 140px;
-    width: 140px;
-}
-fieldset.formulario {
-    color: #000;
-    margin: 1rem;
-    width: 20%;
-    text-align: center;
-    border-radius: 5px;
-    border: 5px solid #1a5dac;
-    background-color: #ffcc00;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
-}
-.botao-form{
-    margin: 1rem;
-    padding: 0.2rem;
-    font-size: 1.2em;
-    background: #30e422;
-    color: #ffffff;
-    text-shadow: 4px 4px 4px #ffffff;
+    padding: 10px;
+    border-bottom: solid 1px #EEE;
+    transition: all ease 0.3s;
     cursor: pointer;
 }
-.campo{
-    margin-bottom: 1em;
+.top3 li::before {
+    content: counter(li) "º";
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 0;
 }
-.campo input:focus{
-    background:#f4e497;
+.top3 .poke-img {
+    width: 50px;
+    margin: 0 8px;
 }
-.campo label{
-    margin-bottom: 0.2em;
-    color:#0000;
+.top3 span {
+    font-size: 20px;
+    font-weight: 300;
+    transition: all 0.3s;
+}
+.top3 li:hover {
+    background-color: #EEE;
+
+}
+.promocao{
+    display: block;
+    margin-top: 30px;
+    height: 250px;
+    background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("../img/mewtwoooo.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+img.mewtwo{
+    width: 11rem;
+}
+img.prom{
+    margin-top: 0.5rem;
+    
+}
+.newsletter {
+    margin-top: 30px;
+    padding: 30px 10px;
+    background: #EEE;
+}
+.newsletter h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.newsletter input {
+    padding: 10px;
+    border: 0;
+    width: 100%;
+}
+.newsletter button {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    background: #000;
+    color: #FFF;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.newsletter button:hover {
+    background: #1a5dac;
+}
+section.formulario {
+    background: #1a5dac;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 30px;
+}
+fieldset {
+    border: 0;
+}
+.campo label {
+    margin-bottom: 0.2rem;
+    color: #ffca4b;
     display: block;
 }
-input, button{
-    font-family: sans-serif;
-    font-size: 1.1em;
-    border-radius: 5px;
+.botao-game{
+    margin-top: 1rem;
 }
+.conteudo-footer{
+    margin: auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+footer .footer-nav{
+    display: block;
+    text-transform:capitalize;
+}
+footer .footer-nav li {
+    margin-bottom: 10px;
+}
+footer .footer-nav a {
+    font-size: 25px;
+    color: #FFF;
+    text-decoration: none;
+}
+.top3-footer{
+    background: #000;
+    color: #fff;
+}
+.frase-rodape{
+    color: #FFF;
+}
+footer .frase-rodape {
+    background: #000;
+    text-align: center;
+    margin-top: 30px;
+    color: #FFF;
+    padding: 20px 0;
+}
+
 @media (max-width: 720px){
     body{
         display: grid;

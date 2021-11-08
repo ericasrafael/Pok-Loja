@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
+    <title>POKÉLOJA na WEB</title>
 </head>
 
 <body>
@@ -15,53 +17,49 @@
             <div class="logo">
                 <img src="./img/logotipo.png" alt="logo">
             </div>
-            <div class="redes-sociais">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="">
-                                <img src="./img/facebook-amarelo.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./img/instagram-amarelo.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./img/linkedin-amarelo.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./img/twitter-amarelo.png" />
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="content-2">
-            <div class="navegacao">
-                <ul>
-                    <li>
-                        <a href="">home</a>
-                    </li>
-                    <li>
-                        <a href="">categorias</a>
-                    </li>
-                    <li>
-                        <a href="">top pokémons</a>
-                    </li>
-                    <li>
-                        <a href="">blog</a>
-                    </li>
-                </ul>
-            </div>
             <div class="busca">
                 <input placeholder="Search Something" type="text" />
             </div>
+        </div>
+        <div class="content-2">
+            <div class="conteudo">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="">home</a>
+                        </li>
+                        <li>
+                            <a href="">categorias</a>
+                        </li>
+                        <li>
+                            <a href="">top pokémons</a>
+                        </li>
+                        <li>
+                            <a href="">blog</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="redes-sociais">
+                    <ul class="social-links">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         </div>
     </header>
     <main class="o-main">
@@ -147,77 +145,141 @@
                     </p>
                     <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
                 </div>
+                <div class="model">
+                    <img src="./img/Rowlet.png" class="poke">
+                    <p><b>Rowlet</b><br>
+                        <s>De R$200,00</s><br>
+                        Por R$150,00
+                    </p>
+                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
+                </div>
+                <div class="model">
+                    <img src="./img/bubassauro.png" class="poke">
+                    <p><b>Bubassauro</b><br>
+                        <s>De R$350,00</s><br>
+                        Por R$300,00
+                    </p>
+                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
+                </div>
             </div>
             <div class="container">
                 <div class="top3">
-                    <img src="./img/top3dasemana.png" class="top">
+                    <img class="top3dasemana" src="./img/top3dasemana.png" alt="top3dasemana">
                     <hr>
-                    <div class="pok3">
-                        <img src="./img/num1.png" class="numero">
-                        <img src="./img/bubassauro.png" class="pok">
-                        <p>Bubassauro</p>
-                    </div>
-                    <hr>
-                    <div class="pok3">
-                        <img src="./img/num2.png" class="numero">
-                        <img src="./img/eevee.png" class="pok">
-                        <p>Eevee</p>
-                    </div>
-                    <hr>
-                    <div class="pok3">
-                        <img src="./img/num3.png" class="numero">
-                        <img src="./img/Rowlet.png" class="pok">
-                        <p>Rowlet</p>
-                    </div>
-                    <hr>
+                    <ol>
+                        <li>
+                            <img class="poke-img"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/7.png"
+                                alt="Squirtle">
+                            <span>Squirtle</span>
+                        </li>
+                        <li>
+                            <img class="poke-img"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png"
+                                alt="Pikachu">
+                            <span>Pikachu</span>
+                        </li>
+                        <li>
+                            <img class="poke-img"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/4.png"
+                                alt="Charmander">
+                            <span>Charmander</span>
+                        </li>
+                    </ol>
                 </div>
                 <div class="promocao">
-                    <img src="./img/promocao.png" alt="oferta" class="prom" style="margin:1rem;">
-                    <img src="./img/mewtwo.png" class="mewtwo">
+                    <img src="./img/promocao.png" alt="oferta" class="prom"">
+                    <img src=" ./img/mewtwo.png" alt="oferta" class="mewtwo">
                 </div>
+                <section class="newsletter">
+                    <h4>Receba nossas novidades</h4>
+                    <input type="text" placeholder="Seu-email">
+                    <button>Cadastrar</button>
+                </section>
+                <section class="formulario">
+                    <h3>Acesse nosso PokéGame Free!</h3>
+                    <p id="subtitulo">Complete suas informações:</p>
+                    <br>
+                    <form>
+                        <fieldset class="grupo">
+                            <div class="campo">
+                                <label for="nome"><strong>Nome</strong></label>
+                                <input type="text" name="nome" id="nome" required>
+                            </div>
+                            <div class="campo">
+                                <label for="sobrenome"><strong>Sobrenome</strong></label>
+                                <input type="text" name="sobrenome" id="sobrenome" required>
+                        </fieldset>
+                        <button class="botao botao-game" type="submit" onsubmit="">Jogar</button>
+                    </form>
+                </section>
             </div>
         </section>
     </main>
     <footer class="o-footer">
-        <div class="content-1">
-            <div class="frase-rodape">
-                <p>© 2013 Web world. All rights reserved. Theme by cssautther</p>
-            </div>
-            <fieldset class="formulario">
-                <p style="font-size: 20px;"><b>Receba nossas novidades!</b><br>
-                    insira seu e-mail: </p>
-                <form>
-                    <div class="campo">
-                        <label for="email"><strong>E-mail</strong></label>
-                        <input type="email" name="email" id="email" required>
-                    </div>
-                    <button class="botao-form" type="submit" onsubmit="">Concluído</button>
-                </form>
-            </fieldset>
+        <div class="conteudo-footer">
+            <nav>
+                <ul class="footer-nav">
+                    <li>
+                        <a href="">home</a>
+                    </li>
+                    <li>
+                        <a href="">categorias</a>
+                    </li>
+                    <li>
+                        <a href="">top pokémons</a>
+                    </li>
+                    <li>
+                        <a href="">blog</a>
+                    </li>
+                </ul>
+            </nav>
+                <div class="top3 top3-footer">
+                    <h3>Não esqueça da checadinha!</h3>
+                    <hr>
+                    <ol>
+                        <li>
+                            <img class="poke-img"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/7.png"
+                                alt="Squirtle">
+                            <span>Squirtle</span>
+                        </li>
+                        <li>
+                            <img class="poke-img"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png"
+                                alt="Pikachu">
+                            <span>Pikachu</span>
+                        </li>
+                        <li>
+                            <img class="poke-img"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/4.png"
+                                alt="Charmander">
+                            <span>Charmander</span>
+                        </li>
+                    </ol>
+                </div>
             <div class="redes-sociais">
-                <ul>
+                <ul class="social-links">
                     <li>
-                        <a href="">
-                            <img src="./img/facebook-azul.png" />
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <img src="./img/instagram-azul.png" />
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <img src="./img/linkedin-azul.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="./img/twitter-azul.png" />
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="frase-rodape">
+            <p>© 2013 Web world. All rights reserved. Theme by cssautther</p>
         </div>
     </footer>
 </body>
