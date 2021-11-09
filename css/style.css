@@ -34,7 +34,7 @@ ul{
 .o-footer{
     grid-area: footer;
     background: #000;
-    padding-top: 30px;
+    padding: 30px;
 }
 .o-header{
     background: #1a5dac;
@@ -50,7 +50,7 @@ ul{
     align-items: center;
 }
 .content-1 img{
-    width: 70%;
+    width: 50%;
 }
 .left{
     display: flex;
@@ -203,7 +203,6 @@ section.principal {
 }
 .top3 li:hover {
     background-color: #EEE;
-
 }
 .promocao{
     display: block;
@@ -214,11 +213,13 @@ section.principal {
     background-position: center center;
 }
 img.mewtwo{
-    width: 11rem;
+    display: block;
+    margin: auto;
+    width: 12rem;
 }
 img.prom{
-    margin-top: 0.5rem;
-    
+    display: block;
+    margin: auto;
 }
 .newsletter {
     margin-top: 30px;
@@ -271,10 +272,14 @@ input[type="text"]{
     margin-top: 1rem;
 }
 .conteudo-footer{
+    color: #ffffff;
     margin: auto;
     width: 1200px;
     display: flex;
     justify-content: space-between;
+}
+.social-footer a{
+    color: #ffffff;
 }
 footer .footer-nav{
     display: block;
@@ -302,8 +307,27 @@ footer .frase-rodape {
     color: #FFF;
     padding: 20px 0;
 }
+@media screen and (max-width: 1200px) {
+    .content-1 {
+        width: 100%;
+    }
+    section.principal {
+        display: flex;
+        justify-content: space-around;
+        padding: 30px 30px;
+    }
+    .pokemons {
+        width: 65%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .container {
+        padding-left: 30px;
+        width: 35%;
+    }
+}
 
-@media (max-width: 720px){
+
+@media (max-width: 768px){
     body{
         display: grid;
         width: 100%;
@@ -311,11 +335,47 @@ footer .frase-rodape {
         grid-template-rows: auto;
         grid-template-areas: "header" "main" "footer"
     }
-    .content-1 img {
-        width: 90%;
+    .content-2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: scroll;
     }
-    .redes-sociais{
-        margin-right: 1rem;
+    .o-header .content-1{
+        display: block;
+    }
+    .left{
+        display: block;
+    }
+    .links-extras {
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        position: absolute;
+        top: 20px;
+        right: 15px;
+    }
+    .busca input{
+        width: 96%;
+    }
+    .conteudo {
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        overflow-x: scroll;
+    }
+    header .content-2 nav ul li {
+        border-right: solid 1px #ffca4b;
+        white-space: nowrap;
+    }
+    .content-1 img {
+        width: 45%;
     }
     header.o-header .logo{
         margin-left: 1rem;
@@ -335,20 +395,17 @@ footer .frase-rodape {
         flex-wrap: wrap;
         gap: 3px 20px;
     }
-    .o-main{
-        width: 100%;
+    section.principal {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 10px;
     }
-    .pokemons{
+    .pokemons {
         display: grid;
-        grid-template-columns: repeat(2,auto);
-        grid-template-rows: auto auto;
+        grid-template-columns: repeat(2,1fr);
         place-items: center;
         width: 100%;
-    }
-    img.poke{
-        height: auto;
-        width: 90%;
-        border: 1px solid #000;
+        gap: 1%;
     }
     .pokemons .model {
         background-color: #e4e4e4;
@@ -364,35 +421,40 @@ footer .frase-rodape {
         flex-direction: column;
         align-items: center;
     }
-    .container{
-        width: 70%;
+    .container {
+        width: 100%;
         margin-bottom: 2rem;
+        padding-left: 0;
     }
-    .container .top3{
+    .container .top3 {
         padding: 1em;
-        width: 90%;
-    }
-    img.pok{
-         width: 35%;
-         height: auto;
+        width: 100%;
+        margin-top: 30px;
     }
     .promocao{
-        margin: 1rem;
-        width: 90%;
+        margin: 30px;
     }
-    footer.o-footer .content-1{
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-    footer.o-footer .redes-sociais{
-        padding-left: 50%;
-        padding-top: 1rem;
-    }
-    fieldset.formulario {
-    width: 60%;
-    }
-    .frase-rodape{
+    .campo label {
+        color: #ffca4b;
+        display: block;
         padding: 0.5rem;
+    }
+    .conteudo-footer {
+        color: #ffffff;
+        margin: auto;
+        width: 100%; 
+        display: block;
+    }
+    .top3-footer {
+        background: #000;
+        color: #fff;
+        margin: 2rem;
+    }
+    footer .frase-rodape {
+        background: #000;
+        text-align: center;
+        margin-top: 30px;
+        color: #FFF;
+        padding: 0; 
     }
 }
