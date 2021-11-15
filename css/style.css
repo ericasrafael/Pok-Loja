@@ -5,7 +5,7 @@
     overflow-x: hidden;
 }
 body{
-    background: #ffca4b;
+    background: #ffcc00;
     display: grid;
     margin: 0 auto;
     grid-template-areas: "header header header" ". main ." "footer footer footer";
@@ -26,7 +26,7 @@ ul{
     margin: 0;
 }
 .o-main{
-    background: #ffca4b;
+    background: #ffcc00;
     grid-area: main;
     text-align: center;
     margin: auto;
@@ -52,10 +52,23 @@ ul{
 .content-1 img{
     width: 50%;
 }
+.right{
+    display: flex;
+    align-items: center;
+}
 .left{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+img.logo{
+    display: block;
+    width: 50%;
+    padding: 0.2rem;
+}
+img.gif-pikachu{
+    width: 15%;
+    display: block;
 }
 .social-links {
     display: flex;
@@ -127,38 +140,83 @@ header .content-2 nav a {
     border: 3px solid #ffca4b;
 }
 .pokemons .model{
-    background-color: #e4e4e4;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
     text-align: center;
     padding: 10px;
-    transition: background ease 0.3s;
 }
-.pokemons .model:hover{
-    background-color: #ffffff;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+img.poke-chikorita{
+    width: 93%;
 }
 .model p{
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    font-weight: 1000;
     padding: 10px;
 }
-.botao {
+button {
+    width: 100%;
     font-size: 1.2em;
-    background: #30e422;
-    color: #ffffff;
+    background: #000;
+    color: #FFF;
     padding: 0.2em 0.6em;
-    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-    text-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+    border: 0.1rem solid #000;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+button:hover {
+    color: #000;
+    background: #000;
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
     cursor: pointer;
 }
-.botao:hover {
-    background: #1a5dac;
-    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
-}
+button::after {
+    content: "";
+    background: #e73c7e;
+    position: absolute;
+    z-index: -1;
+    padding: 0.2em 0.6em;
+    display: block;
+    transition: all 0.5s ease;
+  }
+button.botao::after {
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+  }
+  button.botao:hover::after {
+    transform: skewX(-45deg) scale(1, 1);
+  }
 section.principal {
     display: flex;
     justify-content: space-around;
     padding: 30px 0;
 }
-.pokemons img{
+.pokemons .model img{
     max-width: 100%;
-    border: 1px solid #000;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.pokemons .model:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
 }
 .pokemons{
         width: 75%;
@@ -176,10 +234,14 @@ section.principal {
 .top3{
     background: #FFF;
 }
+.top3-aside li:hover{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
 .top3 li {
     counter-increment: li;
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 10px;
     border-bottom: solid 1px #EEE;
@@ -208,7 +270,7 @@ section.principal {
     display: block;
     margin-top: 30px;
     height: 250px;
-    background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("../img/mewtwoooo.jpg");
+    background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("../img/giphy.gif");
     background-size: cover;
     background-position: center center;
 }
@@ -238,17 +300,13 @@ img.prom{
     border: 0;
     width: 100%;
 }
-.newsletter button {
-    border: 0;
+.btn-form {
     padding: 10px;
     width: 100%;
     background: #000;
     color: #FFF;
     margin-top: 15px;
     cursor: pointer;
-}
-.newsletter button:hover {
-    background: #1a5dac;
 }
 section.formulario {
     background: #1a5dac;
