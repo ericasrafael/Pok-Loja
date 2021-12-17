@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen" />
+    <script src="./js/addShoppe.js" defer></script>
+    <script src="./js/script.js" defer></script>
     <title>POKÉLOJA na WEB</title>
 </head>
 
@@ -26,7 +27,7 @@
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Contato</a></li>
                     <li>
-                        <a href="#">
+                        <a id="btn-carrinho" href="#">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </li>
@@ -76,104 +77,14 @@
     </header>
     <main class="o-main">
         <section class="principal">
-            <div class="pokemons">
-                <div class="model">
-                    <img src="./img/pikachu.png" class="poke">
-                    <p><b>Pikachu</b><br>
-                        <s>De R400,00</s><br>
-                        Por R$360,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/Meowth.png" class="poke">
-                    <p><b>Meowth</b><br>
-                        <s>De R$300,00</s><br>
-                        Por R$250,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/eevee.png" class="poke">
-                    <p><b>Eevee</b><br>
-                        <s>De R$400,00</s><br>
-                        Por R$350,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/Totodile.png" class="poke">
-                    <p><b>Totodile</b><br>
-                        <s>De R$320,00</s><br>
-                        Por R$260,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/Togepi.png" class="poke">
-                    <p><b>Togepi</b><br>
-                        <s>De R$250,00</s><br>
-                        Por R$200,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/Rowlet.png" class="poke">
-                    <p><b>Rowlet</b><br>
-                        <s>De R$200,00</s><br>
-                        Por R$150,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/bubassauro.png" class="poke">
-                    <p><b>Bubassauro</b><br>
-                        <s>De R$350,00</s><br>
-                        Por R$300,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/Chikorita.png" class="poke poke-chikorita">
-                    <p><b>Chikorita</b><br>
-                        <s>De R$300,00</s><br>
-                        Por R$250,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/mew.png" class="poke">
-                    <p><b>Mew</b><br>
-                        <s>De R$400,00</s><br>
-                        Por R$350,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/mewtwo.png" class="poke">
-                    <p><b>Mewtwo</b><br>
-                        <s>De R$2000,00</s><br>
-                        Por R$1500,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/Rowlet.png" class="poke">
-                    <p><b>Rowlet</b><br>
-                        <s>De R$200,00</s><br>
-                        Por R$150,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
-                </div>
-                <div class="model">
-                    <img src="./img/bubassauro.png" class="poke">
-                    <p><b>Bubassauro</b><br>
-                        <s>De R$350,00</s><br>
-                        Por R$300,00
-                    </p>
-                    <button class="botao" type="submit" onsubmit=""><u>Comprar</u></button>
+            <div class="column">
+                <div class="pokemons"></div>
+                <div class="pagination">
+                    <button class="btn-ant botao">Anterior</button>
+                    <button class="btn-prox botao">Próximo</button>
                 </div>
             </div>
+
             <div class="container">
                 <div class="top3 top3-aside">
                     <img class="top3dasemana" src="./img/top3dasemana.png" alt="top3dasemana">
@@ -297,6 +208,12 @@
             <p>© 2013 Web world. All rights reserved. Theme by cssautther</p>
         </div>
     </footer>
+    <section class="sidebar">
+        <button id="fechar-carrinho">X</button>
+        <h4>Meu Carrinho</h4>
+    </section>
+    <div class="fecha-menu isClose"></div>
+
 </body>
 
 </html>

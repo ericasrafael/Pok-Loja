@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body{
     background: #ffcc00;
@@ -99,6 +99,10 @@ img.gif-pikachu{
 .links-extras a{
     color: #000;
     text-decoration: none;
+    transition: all ease-in 0.2s;
+}
+.links-extras a:hover{
+    color: #ffffff;
 }
 .links-extras li {
     margin-left: 14px;
@@ -140,11 +144,12 @@ header .content-2 nav a {
     border: 3px solid #ffca4b;
 }
 .pokemons .model{
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    border-radius: 8px;
+    background: linear-gradient(-45deg, white, gray);
     background-size: 200% 200%;
     animation: gradient 5s ease infinite;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
 @keyframes gradient {
 	0% {
@@ -157,34 +162,52 @@ header .content-2 nav a {
 		background-position: 0% 50%;
 	}
 }
-img.poke-chikorita{
-    width: 93%;
+.model h2{
+    margin: 10px 0;
+    text-transform: capitalize;
 }
-.model p{
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    font-weight: 1000;
-    padding: 10px;
+.model .botao img {
+    width: 22px;
+    margin-right: 8px;
+}
+.price-from {
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.price-to {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 700;
 }
 button {
     width: 100%;
-    font-size: 1.2em;
-    background: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #1a5dac;
     color: #FFF;
     padding: 0.2em 0.6em;
     border: 0.1rem solid #000;
     position: relative;
     z-index: 1;
     overflow: hidden;
+    border-radius: 8px;
 }
-button:hover {
+button.botao:hover {
     color: #000;
-    background: #000;
+    background: #1a5dac;
     box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
     cursor: pointer;
 }
-button::after {
+button.botao::after {
     content: "";
-    background: #e73c7e;
+    background: #DDAA00;
     position: absolute;
     z-index: -1;
     padding: 0.2em 0.6em;
@@ -201,6 +224,10 @@ button.botao::after {
   button.botao:hover::after {
     transform: skewX(-45deg) scale(1, 1);
   }
+ button.botao img {
+    width: 2px;
+    margin-right: 8px;
+  }
 section.principal {
     display: flex;
     justify-content: space-around;
@@ -212,21 +239,34 @@ section.principal {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-.pokemons .model:hover img{
+.pokemons .model:hover img.poke{
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-
+    cursor: pointer;
 }
 .pokemons{
-        width: 75%;
         display: grid;
         gap: 20px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+.principal .column{
+    display: flex;
+    flex-direction: column;
+}
+.pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pagination button {
+    width: 20%;
+    cursor: pointer;
+    padding: 10px 20px;
+}
 .container{
     padding-left: 30px;
-    width: 25%;
 }
 .top3dasemana{
     width: 90%;
@@ -267,6 +307,7 @@ section.principal {
     background-color: #EEE;
 }
 .promocao{
+    border-radius: 8px;
     display: block;
     margin-top: 30px;
     height: 250px;
@@ -309,8 +350,9 @@ img.prom{
     cursor: pointer;
 }
 section.formulario {
-    background: #1a5dac;
-    color: #ffffff;
+    border-radius: 8px;
+    background: #EEE;
+    color: black;
     padding: 1rem;
     text-align: center;
     margin-top: 30px;
@@ -323,7 +365,7 @@ input[type="text"]{
 }
 .campo label {
     padding: 0.5rem;
-    color: #ffca4b;
+    color: #1a5dac;
     display: block;
 }
 .botao-game{
@@ -365,6 +407,53 @@ footer .frase-rodape {
     color: #FFF;
     padding: 20px 0;
 }
+
+body.carrinho-aberto .sidebar{
+    box-shadow: -4px 5px 12px 2px rgba(0,0,0,0.62);
+    right: 0;
+}
+
+.sidebar{
+    z-index: 200;
+    transition: all ease-in .3s;
+    padding: 15px;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    border-radius: 8px;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.sidebar button{
+    width: 15%;
+    color: black;
+    background: transparent;
+    border: 0;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.sidebar h4{
+    font-size: 20px;
+    margin: 0;
+}
+.fecha-menu{
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.isClose{
+    display: none;
+}
+
 @media screen and (max-width: 1200px) {
     .content-1 {
         width: 100%;
