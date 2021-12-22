@@ -28,7 +28,7 @@ class Pokemon {
             <p class="price-from">De ${this.price}</p>
             <p class="price-to">Por ${(this.price * 0.8).toFixed(2)}</p>
             
-                 <button class="botao">
+                 <button data-id="${this.id}" class="poke-shopee botao">
                     <img src="img/pokeball.png" alt="Pokeball">
                     <span>Comprar</span>
             </button>
@@ -46,8 +46,7 @@ class PokeList {
     //Variáveis para incrementação
     pages = 0;
     currentPage = 0;
-
-    //Elementos selecionados do html
+    pokemons = [];
 
     //Seleciona a classe de pokemons, que no caso é a classe pokemons no HTML.
     pokeList = document.querySelector('.pokemons');
@@ -121,22 +120,54 @@ class PokeList {
         const pokemons = pokemonsApi.map((pokemon) => new Pokemon(pokemon.name, pokemon.url));
         //Retorna um Array com instâncias da Class Pokemon
 
-        /*Colocando agora os pokemons para dentro da classe "pokemons", dinamicamente. Lembre-se, .forEach é cada
-        elemnto presente em um Array.*/
+        this.pokemons = pokemons;
+        //Declarando que a variável de Array "pokemons =[]" recebe o array com instâncias da Class Pokemon
+
+        /*Colocando agora cada pokemon para dentro da classe "pokemons" em seu método html de renderização no HTML do 
+        documento, dinamicamente. Lembre-se, .forEach é cada elemento presente em um Array.*/
         pokemons.forEach((pokemon) => {
             const html = pokemon.html();
             //Executando a adição de cada pokemon no html
             this.pokeList.appendChild(html)
         });
-        this.addButtons(); // Chamada da função para esconder ou não os botões
-    }
 
+        this.addButtons(); // Chamada da função para esconder ou não os botões
+
+        /* 
+        Adicionando evento de click nos botões de comprar. Lembre-se querySelector so retorna un único elemento, e, no
+        caso, precisa-se selecionar todos os elementos que contenham a mesma classe.
+        */
+        const btnShopee = document.querySelectorAll('.poke-shopee');
+        //Adicionar a cada botão de compra um evento de "click" com loop, para selecionar todos.
+        btnShopee.forEach((btn) => {
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                /*
+                Em Console é retonado a classe PokeList , quando damos console.log(event.target.attributes), com todas as 
+                suas propriedades. Nosso objetivo é apenas identificar cada pokemon pelo seu id, que é retornado como um 
+                atributo, elemento de um array quando damos console.log(event.target.attributes), atributos da classe 
+                poke-buy-btn (botao). Temos que retornar apenas o atributo id, que o definimos em "data-id" no html, 
+                que é um elemento do array Attributes. Como temos que selecionar apenas um atributo, dentro de um array, 
+                usamos .getAttribute. Ademais, lembre-se que "event.target" retorna no console quem foi clicado.
+                */
+                const id = event.target.getAttribute('data-id');
+                /** 
+                 Seleciona cada pokemon identificado pelo seu id, que é retornado no console, e o armazena 
+                 na variável pokemon. Lembre-se, this.pokemons contém cada pokémon, ou seja, o array com 
+                 instâncias da Class Pokemon.
+                 */
+                 const pokemon = this.pokemons.find((pokemon) => pokemon.id == id);
+                 window.carrinho.adicionar(pokemon);
+            });
+        });
+    }
     //Método para exibir ou esconder os botões de paginação segundo a numeração da página atual
     addButtons() {
         this.currentPage === 0 ? this.btnAnt.style.visibility = 'hidden' : this.btnAnt.style.visibility = 'visible';
         this.currentPage + 1 === this.pages ? this.btnProx.style.visibility = 'hidden' : this.btnProx.style.visibility = 'visible';
     }
-}
+};
+
 //Executa escopo quando página termina seu carregamento.
 window.onload = async () => {
     new PokeList();

@@ -407,12 +407,12 @@ footer .frase-rodape {
     color: #FFF;
     padding: 20px 0;
 }
-
+/* Comportamente depois de clicar no ícone do carrinho */
 body.carrinho-aberto .sidebar{
     box-shadow: -4px 5px 12px 2px rgba(0,0,0,0.62);
     right: 0;
 }
-
+/* Comportamente antes de clicar no ícone do carrinho */
 .sidebar{
     z-index: 200;
     transition: all ease-in .3s;
@@ -441,7 +441,8 @@ body.carrinho-aberto .sidebar{
     font-size: 20px;
     margin: 0;
 }
-.fecha-menu{
+/* Comportamento da tela quando clicar no ícone do carrinho */
+.fecha-menu {
     z-index: 100;
     width: 100vw;
     height: 100vh;
@@ -449,9 +450,11 @@ body.carrinho-aberto .sidebar{
     position: fixed;
     top: 0;
     right: 0;
-}
-.isClose{
     display: none;
+}
+/* Comportamento da tela quando fechar o carrinho */
+body.isOpen .fecha-menu{
+    display: block;
 }
 
 @media screen and (max-width: 1200px) {
