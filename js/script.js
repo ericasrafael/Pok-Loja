@@ -17,6 +17,7 @@ class Pokemon {
         que representa cada div de pokemon
         className retorna e define o valor do atributo class do elemento especificado. */
         pokeDiv.className = 'model';
+        pokeDiv.setAttribute('data-id', this.id);
         /*Adicionando o conteúdo para a div criada, por Template String " ´ ´ ", assim poderá
         substituir as informnações dinamicamente*/
         pokeDiv.innerHTML = `
@@ -28,7 +29,7 @@ class Pokemon {
             <p class="price-from">De ${this.price}</p>
             <p class="price-to">Por ${(this.price * 0.8).toFixed(2)}</p>
             
-                 <button data-id="${this.id}" class="poke-shopee botao">
+                 <button class="poke-shopee botao">
                     <img src="img/pokeball.png" alt="Pokeball">
                     <span>Comprar</span>
             </button>
@@ -66,8 +67,24 @@ class PokeList {
         this.btnProx.onclick = () => this.PagLater();
         this.btnAnt.onclick = () => this.PagPrevious();
     }
-    //Busca pelos pokemons na API
 
+    //Método para passar para próxima página
+    async PagLater() {
+        const nextPag = this.currentPage += 1;
+
+        if (nextPag < this.pages) {  //Se a numeração da página atual for menor que a quantidade de páginas
+            this.getPokemons(nextPag);
+        }
+    }
+
+    //Método para passar para página anterior 
+    async PagPrevious() {
+        const antPag = this.currentPage -= 1;
+        if (antPag >= 0) {  //Se a numeração da página atual for maior que a numeração da primeira página
+            this.getPokemons(antPag);
+        }
+    }
+    //Busca pelos pokemons na API
     async getPokemons(page) {
 
         this.pokeList.innerHTML = '<div>Loanding Pokémons ...</div>';
@@ -86,22 +103,6 @@ class PokeList {
         this.listaPokemons(json.results);
     }
 
-    //Método para passar para próxima página
-    async PagLater() {
-        const nextPag = this.currentPage += 1;
-
-        if (nextPag < this.pages) {  //Se a numeração da página atual for menor que a quantidade de páginas
-            this.getPokemons(nextPag);
-        }
-    }
-
-    //Método para passar para página anterior 
-    async PagPrevious() {
-        const antPag = this.currentPage -= 1;
-        if (antPag >= 0) {  //Se a numeração da página atual for maior que a numeração da primeira página
-            this.getPokemons(antPag);
-        }
-    }
 
     /*Método para renderizar os pokemons no html
     Função que recebe pokemons no argumento e os redenriza no html a partir dos dados que pede a Class Pokemon.
@@ -150,14 +151,14 @@ class PokeList {
                 que é um elemento do array Attributes. Como temos que selecionar apenas um atributo, dentro de um array, 
                 usamos .getAttribute. Ademais, lembre-se que "event.target" retorna no console quem foi clicado.
                 */
-                const id = event.target.getAttribute('data-id');
+                const id = event.target.closest('.model').getAttribute('data-id');
                 /** 
                  Seleciona cada pokemon identificado pelo seu id, que é retornado no console, e o armazena 
                  na variável pokemon. Lembre-se, this.pokemons contém cada pokémon, ou seja, o array com 
                  instâncias da Class Pokemon.
                  */
-                 const pokemon = this.pokemons.find((pokemon) => pokemon.id == id);
-                 window.carrinho.adicionar(pokemon);
+                const pokemon = this.pokemons.find((pokemon) => pokemon.id == id); //condição = true para retornar pokémon
+                window.carrinho.adicionar(pokemon);
             });
         });
     }

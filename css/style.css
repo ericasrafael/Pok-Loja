@@ -177,7 +177,6 @@ header .content-2 nav a {
     margin-top: 0;
     margin-bottom: 5px;
 }
-
 .price-to {
     font-size: 22px;
     margin-top: 0;
@@ -265,11 +264,39 @@ section.principal {
     cursor: pointer;
     padding: 10px 20px;
 }
+.poke-abilities{
+    display: flex;
+    background-color: #edf6e9;
+    padding: 5px;
+    width: 50vw;
+    height: 90vh;
+    text-transform: capitalize;
+}
+.poke-abilities img{
+    margin-top: 30px;
+    margin-left: 15px;
+    border: solid 2px #000;
+    border-radius: 10px;
+    padding: 15px;
+}
+.poke-abilities h1{
+    margin-top: 40px;
+}
+.error{
+    padding: 15px;
+    background-color: red;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
 .container{
     padding-left: 30px;
 }
 .top3dasemana{
-    width: 90%;
+    width: 100%;
 }
 .top3{
     background: #FFF;
@@ -305,6 +332,9 @@ section.principal {
 }
 .top3 li:hover {
     background-color: #EEE;
+}
+.top3 li:first-child { 
+    padding-top: 0;
 }
 .promocao{
     border-radius: 8px;
