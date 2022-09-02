@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericasrafael/Pok-Loja.git"
+    "url": "git+https://github.com/eritools/Pok-Loja.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ericasrafael/Pok-Loja/issues"
+    "url": "https://github.com/eritools/Pok-Loja/issues"
   },
-  "homepage": "https://github.com/ericasrafael/Pok-Loja#readme"
+  "homepage": "https://github.com/eritools/Pok-Loja#readme"
 }
